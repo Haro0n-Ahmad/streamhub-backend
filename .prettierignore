@@ -10,7 +10,6 @@ build/
 out/
 .nuxt/
 .vuepress/dist/
-
 # Logs and temp files
 logs/
 *.log
