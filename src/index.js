@@ -4,10 +4,24 @@ import mongoose from "mongoose";
 import { DB_Name } from "./constants.js";
 import connectDb from "./db/index.js";
 
-// configure dotenv early so environment variables are available
 dotenv.config({ path : "./.env"});
 
-connectDb();
+ app.on("error", (error) => {
+     console.log("Error in connection", error)
+     throw error
+      })
+      
+connectDb()
+.then(()=>{
+  app.listen(process.env.Port || 3000 , ()=>{
+    console.log(`Server is running on port ${process.env.Port }`)
+  }) 
+
+})
+.catch((error)=>{
+    console.log("Connection not Establised",error)
+})
+
 
 /*
 import express from "express";
