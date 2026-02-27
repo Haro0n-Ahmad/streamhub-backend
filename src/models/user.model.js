@@ -78,11 +78,13 @@ import jwt from "jsonwebtoken"
         username : this.username
     } , process.env.JWT_SECRET, {expiresIn : process.env.Access_Token_Expire_Time}) 
    }
+   
   userSchema.methods.generateRefreshToken = function(){
     return jwt.sign({
         userId : this.id,
     }, process.env.Refresh_Token_Secret, {expiresIn : process.env.Refresh_Token_Expire_Time})
   }
+  
 
  export const User = mongoose.model("User",userSchema)
 
