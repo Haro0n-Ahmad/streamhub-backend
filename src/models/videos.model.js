@@ -2,7 +2,6 @@ import mongoose from "mongoose";
 import mongooseAggregatePaginate from "mongoose-aggregate-paginate-v2";
 
 
-
 const videoSchema = new mongoose.Schema(
     
     {
@@ -27,7 +26,7 @@ const videoSchema = new mongoose.Schema(
         
        },
          duration : {
-        type : Number , // we will store the duration of the video in seconds,
+        type : Number , // we will store the duration of the video in seconds in this model,
         required : true,
          },
         views : {

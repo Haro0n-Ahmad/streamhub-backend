@@ -10,8 +10,6 @@ const connectDb = async () => {
     } catch (error) {
         console.log("Connection not established", error)
         process.exit(1)
-    } {
-
     }
 }
 
