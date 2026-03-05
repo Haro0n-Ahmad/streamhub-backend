@@ -28,4 +28,4 @@ async function uploadOnCloudinary(LocalfilePath) {
 }
 
 
-export default uploadOnCloudinary;
+export { uploadOnCloudinary };

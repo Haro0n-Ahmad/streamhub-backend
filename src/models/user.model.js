@@ -17,7 +17,7 @@ import jwt from "jsonwebtoken"
         unique : true,
         trim : true 
     },
-      fullname : {
+      fullName : {
         type : String,
         required : true,
         trim : true ,
@@ -28,13 +28,13 @@ import jwt from "jsonwebtoken"
         required : true,
 
      },
-     coverimage : {
+     coverImage : {
         type : String , // we will store the images on Cloudinary and get the Url from there.
         
      },
       watchHistory : [
         {
-            type : mongoose.Schema.types.ObjectId,
+            type : mongoose.Schema.Types.ObjectId,
             ref: "Video",
         },
     ],

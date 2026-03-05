@@ -1,11 +1,20 @@
-import { Router } from "express"  // ✅ Correct (named import)
+import { Router } from "express"  
+import {upload} from "../middlewares/multer.middleware.js"
 
 import { registerUser } from "../controllers/user.controllers.js";
 import express from "express"
 
-const router = express.Router()  // ✅ Also correct
+const router = express.Router()  
+ router.route("/register").post
+ (
+    upload.fields([
+        {name: "avatar", maxCount: 1},
+        {name : "coverImage", maxCount: 1}
+    ]),
+    registerUser
+);
 
- router.route("/register").post(registerUser);
+
  
 
 export default router;
