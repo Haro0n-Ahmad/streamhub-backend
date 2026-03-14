@@ -51,7 +51,7 @@ const registerUser = asyncHandler(async (req, res) => {
   const existedUser = await User.findOne({
     $or: [
       { username },
-      { email }
+      {  email  }
     ]
   });
 
@@ -105,7 +105,7 @@ const loginUser = asyncHandler(async(req,res)=>{
   // password check
   // access and refresh token
   // send Cookies
-   
+ 
   const {username,email,password} = req.body;
   if(!username || !email){
     throw new ApiError(404,"Username or Password is required")
@@ -134,9 +134,28 @@ if (!isPasswordValid)
   secure : true 
 
  }
+ 
 
+ return res
+ .status(200)
+ .cookie("accessToken",accessToken,options)
+ .cookie("refreshToken",refreshToken)
+ .json(
+    new ApiResponse(
+      200,
+      {
+        user : logedInUser,
+               accessToken,
+               refreshToken
+      },
+        "User is Loged in Sucessfully"
+    ))
+})
+// Writing Method for Log Out User
+const logoutUser = asyncHandler(async(req,res)=>{
+  // we hae
 
-
+  
 })
 
 export { 
