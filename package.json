@@ -1,0 +1,36 @@
+{
+  "name": "youtube-project",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A full-stack YouTube-like application with video upload and streaming capabilities",
+  "author": "Haroon Ahmad",
+  "license": "ISC",
+  "workspaces": [
+    "apps/backend",
+    "apps/frontend",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspaces --if-present",
+    "dev:backend": "npm run dev --workspace=apps/backend",
+    "dev:frontend": "npm run dev --workspace=apps/frontend",
+    "build": "npm run build --workspaces --if-present",
+    "build:backend": "npm run build --workspace=apps/backend",
+    "build:frontend": "npm run build --workspace=apps/frontend",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "clean": "rm -rf node_modules apps/*/node_modules packages/*/node_modules"
+  },
+  "keywords": [
+    "youtube",
+    "video-streaming",
+    "full-stack",
+    "react",
+    "express",
+    "mongodb"
+  ],
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

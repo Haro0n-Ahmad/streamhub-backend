@@ -1,0 +1,13 @@
+{
+  "name": "@youtube-project/shared",
+  "version": "1.0.0",
+  "description": "Shared utilities and types for YouTube project",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "keywords": ["shared", "utilities"],
+  "author": "Haroon Ahmad",
+  "license": "ISC"
+}
